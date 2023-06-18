@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player</title>
+  <style>
+    body {
+      font-family: Ariel, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+
+    /*GLOBAL*/
+    .container {
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+
+    .dark {
+      padding: 15px;
+      background-color: #35424a;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+
+    /*HEADER*/
+    header {
+      background-color: #1b1c1d;
+      color: #ffffff;
+      border-bottom: #e8491d solid 5px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+      padding: 10px 10px;
+    }
+
+    header li {
+      float: left;
+      display: inline;
+      padding: 0 20px 0 20px;
+
+    }
+
+    header #branding {
+      float: left;
+    }
+
+    header nav {
+      float: right;
+      margin-top: 21px;
+    }
+
+    /*SIDEBAR*/
+    aside#sidebar {
+      float: right;
+      width: 30%;
+      margin-top: 10px;
+
+    }
+
+    /*ASIDE*/
+    article#main-col {
+      float: left;
+      width: 65%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="heading">Social Distancing Violation Analyzer</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">HOME</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+  <section id="main">
+    <div class="container">
+      <article id="main-col">
+        <h1 style="font-size: 30px;">Video Player</h1>
+        <video width="840" height="480" controls autoplay loop>
+          <!-- <source src="{{ url_for('static', filename='uploads/' + filename) }}" type="{{ mimetype }}"> -->
+          <source src="{{ url_for('static', filename='outputs/output.mp4') }}" type="video/mp4">
+        </video>
+      </article>
+
+      <aside id="sidebar">
+        <div class="dark">
+          <h3>What is Done here:</h3>
+          <p>The process of a social distancing violation analyzer typically involves several steps.
+            <br><br>👉 First, the system
+            captures a video feed of a public area or workspace.
+            <br><br>👉 Next, the system uses computer vision and image
+            processing techniques to identify and track individuals in the video.
+            <br><br>👉
+            The system then measures the distance between the individuals and compares it to the recommended social
+            distancing guidelines. If the distance falls below the threshold, the system flags it as a potential
+            violation.
+            <br><br>👉
+            The system generates violation status by displaying colors for to designated authorities or operators, who
+            can take
+            appropriate action to enforce social distancing guidelines.
+            <br><br>👉
+            Overall, the process of a social distancing violation analyzer is designed to promote social distancing
+            behaviors and reduce the spread of infectious diseases in public spaces and workplaces.
+          </p>
+
+        </div>
+      </aside>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- <h1>Video Player</h1>
+    <video width="840" height="480" controls>
+      <source src="{{ url_for('static', filename='uploads/' + filename) }}" type="{{ mimetype }}">
+    </video> -->
+</body>
+
+</html>
